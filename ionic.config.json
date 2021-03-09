@@ -1,0 +1,7 @@
+{
+  "name": "justdify",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

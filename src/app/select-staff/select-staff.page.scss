@@ -1,0 +1,98 @@
+ion-header {
+	background-color: #1a608e;
+	background: linear-gradient(to bottom, #1a608e 1%, #1b8b86 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#1a608e", endColorstr="#1b8b86",GradientType=0 );
+	padding-top: 15px;
+    padding-bottom: 15px;
+}
+ion-title {
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+}
+ion-header ion-buttons {
+    min-width: 30px;
+}
+ion-toolbar {
+    --min-height: 45px;
+}
+.stepe-right {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 500;
+    font-family: "Raleway", sans-serif;
+}
+.chat-con-list {
+    margin-top: 20px;
+    padding: 0;
+}
+.chat-con-list ion-thumbnail {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    border: 1px solid #21B5AE;
+}
+.chat-con-list ion-t   humbnail ion-img {
+    width: 48px;
+}
+.chat-con-list h4 {
+    font-size: 15px;
+    color: #002423;
+    font-weight: 600;
+    font-family: "Raleway", sans-serif;
+    margin: 0;
+}
+.chat-con-list h4 span {
+    display: block;
+    font-size: 13px;
+    color: #747474;
+    font-weight: 500;
+    line-height: 20px;
+}
+ion-item {
+    --background-activated: #EFF3F3;
+}
+.profile-icon-right {
+    --color-activated: #fff;
+    --background-activated:#21B5AE;
+}
+ion-checkbox {
+    width: 40px;
+    height: 40px;
+    --border-width: 1px;
+    --border-color: #D8D8D8;
+    --border-radius: 40px;
+    border-radius: 40px;
+    --background-checked: #21B5AE;
+    --border-color-checked: #21B5AE;
+    margin-inline-end: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-inline-start: 0px;
+    --size: 12px; 
+    --padding: 6px;
+}
+.select-service ion-item {
+    --padding-start: 20px;
+    --padding-end: 20px;
+    --padding-top: 5px;
+    --padding-bottom: 5px;
+}
+ion-checkbox.checkbox-checked {
+    background: #21B5AE;
+    padding: 10px;
+    border-radius: 5px;
+    --checkmark-width: 4px;
+}
+ion-item.item-checkbox-checked {
+    --background: #EFF3F3;
+}
+ion-checkbox.ios.checkbox-checked {
+    --checkmark-width: 2px;
+    padding: 6px;
+}

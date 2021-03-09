@@ -1,0 +1,63 @@
+<ion-header class="profile-top">
+	<ion-toolbar>
+	    <ion-buttons slot="start" (click)="goBack()">
+	      <ion-icon name="arrow-back-outline"></ion-icon>
+	    </ion-buttons>
+    </ion-toolbar>
+	<!-- <ion-buttons slot="start" (click)= "goBack()">
+		<ion-icon name="arrow-back-outline"></ion-icon>
+	</ion-buttons> -->
+	<ion-list class="ion-no-padding">
+			<ion-item class="ion-no-padding" lines="none">
+				<ion-buttons class="profile-image"><ion-img src={{UserImage}}></ion-img></ion-buttons>
+			</ion-item>
+			<ion-item class="ion-no-padding profile-head" lines="none">
+				<h3>{{userName}}</h3>
+			</ion-item>
+			<ion-item class="ion-no-padding" lines="none">
+				<ion-button fill="clear" class="edit-profile-btn" (click)="goToProfile()">Edit Profile <ion-icon name="pencil"></ion-icon></ion-button>
+			</ion-item>
+
+		</ion-list>
+</ion-header>
+<ion-content>
+	<div class="profile-list"> 
+		<ion-list>
+			<ion-item class="ion-no-padding" lines="full">
+				<ion-buttons href="#" class="profile-icon-left" slot="start"><ion-img src="../../assets/img/profile-list-icon1.png"></ion-img></ion-buttons>
+				<label href="#">My Appointment</label>
+				<ion-buttons class="profile-icon-right" slot="end" [routerLink]="['/my-appointment']"><ion-icon name="chevron-forward-outline"></ion-icon></ion-buttons>
+			</ion-item>
+			<ion-item class="ion-no-padding" lines="full">
+				<ion-buttons href="#" class="profile-icon-left" slot="start"><ion-img src="../../assets/img/profile-list-icon2.png"></ion-img></ion-buttons>
+				<label href="#">My Favorite</label>
+				<ion-buttons class="profile-icon-right" slot="end" [routerLink]="['/my-favorite']"><ion-icon name="chevron-forward-outline"></ion-icon></ion-buttons>
+			</ion-item>
+			<ion-item class="ion-no-padding" lines="full">
+				<ion-buttons href="#" class="profile-icon-left" slot="start"><ion-img src="../../assets/img/profile-list-icon4.png"></ion-img></ion-buttons>
+				<label href="#">My Reviews</label>
+				<ion-buttons class="profile-icon-right" slot="end" [routerLink]="['/my-review']"><ion-icon name="chevron-forward-outline"></ion-icon></ion-buttons>
+			</ion-item>
+			<ion-item class="ion-no-padding" lines="full">
+				<ion-buttons href="#" class="profile-icon-left" slot="start"><ion-img src="../../assets/img/profile-list-icon5.png"></ion-img></ion-buttons>
+				<label href="#">Terms and Conditions</label>
+				<ion-buttons class="profile-icon-right" slot="end" [routerLink]="['/terms']"><ion-icon name="chevron-forward-outline"></ion-icon></ion-buttons>
+			</ion-item>
+			<ion-item class="ion-no-padding" lines="full">
+				<ion-buttons href="#" class="profile-icon-left" slot="start"><ion-img src="../../assets/img/profile-list-icon6.png"></ion-img></ion-buttons>
+				<label href="#">Chat</label>
+				<ion-buttons class="profile-icon-right" slot="end" [routerLink]="['/chat']"><ion-icon name="chevron-forward-outline"></ion-icon></ion-buttons>
+			</ion-item>
+			<ion-item class="ion-no-padding" lines="full">
+				<ion-buttons href="#" class="profile-icon-left" slot="start"><ion-img src="../../assets/img/profile-list-icon7.png"></ion-img></ion-buttons>
+				<label href="#">About Us</label>
+				<ion-buttons class="profile-icon-right" slot="end" [routerLink]="['/aboutUs']"><ion-icon name="chevron-forward-outline"></ion-icon></ion-buttons>
+			</ion-item>
+			<ion-item class="ion-no-padding" lines="none">
+				<ion-buttons href="#" class="profile-icon-left" slot="start"><ion-img src="../../assets/img/profile-list-icon8.png"></ion-img></ion-buttons>
+				<label href="#">Logout</label>
+				<ion-buttons class="profile-icon-right" slot="end" (click)="logout()"><ion-icon name="chevron-forward-outline"></ion-icon></ion-buttons>
+			</ion-item>
+		</ion-list>
+	</div>
+</ion-content>

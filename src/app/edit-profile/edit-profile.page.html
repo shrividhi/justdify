@@ -1,0 +1,65 @@
+<ion-header>
+	<ion-toolbar>
+	    <ion-buttons slot="start" (click)="goBack()">
+	      <ion-icon name="arrow-back-outline"></ion-icon>
+	    </ion-buttons>
+	    <ion-title>Edit Profile</ion-title>
+	    <ion-buttons slot="end" href="#">
+	      <!-- <ion-icon name="arrow-back-outline"></ion-icon> -->
+	    </ion-buttons>
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+	<form [formGroup] = "profileForm">
+		<ion-list class="ion-no-padding profile-top">
+			<ion-item class="ion-no-padding" lines="none">
+				<ion-buttons class="profile-image" >
+					<ion-img src={{UserImage}} ></ion-img>
+				</ion-buttons>
+			</ion-item>
+			<ion-item class="ion-no-padding" lines="none">
+				<ion-button fill="clear" class="con-btn" type="file" (click)="presentActionSheet()">
+					<ion-icon name="cloud-upload"></ion-icon> Upload New Picture
+				</ion-button>
+			</ion-item>
+
+	</ion-list>
+		<div class="login-bg">
+					<ion-list>
+						<ion-item class="form-feild">
+						<ion-label position="stacked">Username</ion-label>
+						<ion-input placeholder="Username" formControlName= "username" ></ion-input>
+						<ion-button fill="clear" class="over-icon"><ion-img src="../../assets/img/user-icon.png"></ion-img></ion-button>
+						</ion-item>
+						
+						<ion-item class="form-feild">
+						<ion-label position="stacked">Email Address</ion-label>
+						<ion-input formControlName= "email" placeholder="Email Address"></ion-input>
+						<ion-button fill="clear" class="over-icon"><ion-img src="../../assets/img/mail-icon.png"></ion-img></ion-button>
+						</ion-item>
+
+						<ion-item class="form-feild mob-nubmer">
+						<ion-label position="stacked">Mobile Number</ion-label>
+						<span class="select-code">
+							<!-- <ion-img src="../../assets/img/flag.png"></ion-img> -->
+							<ion-select value="+1" placeholder="+1">
+								<ion-select-option value="+1">+1</ion-select-option>
+								<ion-select-option value="+2">+2</ion-select-option>
+							</ion-select>
+						</span>
+						
+						<ion-input formControlName= "mobile" placeholder="Mobile Number"></ion-input>
+						<ion-button fill="clear" class="over-icon"><ion-img src="../../assets/img/phone-icon.png"></ion-img></ion-button>
+						</ion-item>
+						
+						<ion-item class="form-feild" lines="none">
+						<ion-button class="custom-button" (click)= "updateProfile()">Update</ion-button>
+						</ion-item>
+						
+					</ion-list>
+		</div>
+	</form>
+	
+</ion-content>

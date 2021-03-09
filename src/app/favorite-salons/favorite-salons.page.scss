@@ -1,0 +1,28 @@
+ion-header {
+	background-color: #1a608e;
+	background: linear-gradient(to bottom, #1a608e 1%, #1b8b86 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#1a608e", endColorstr="#1b8b86",GradientType=0 );
+	padding-top: 15px;
+    padding-bottom: 15px;
+}
+ion-title {
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    padding-inline-start: 50px;
+    padding-inline-end: 50px;
+}
+ion-header ion-buttons {
+    min-width: 30px;
+}
+ion-toolbar {
+    --min-height: 45px;
+}
+.custom-btn {
+    float: right;
+}
+.salon-dis {
+    font-size: 18px !important;
+}

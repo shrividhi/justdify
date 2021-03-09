@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="goBack()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Select Services</ion-title>
+    <ion-buttons slot="end" href="#" class="stepe-right">Step 1</ion-buttons>
+  </ion-toolbar>
+  <ul class="services-btn-list">
+		<li *ngFor="let service of services"><ion-buttons (click)="getSubServices(service.id)">{{service.title}}</ion-buttons></li>
+  </ul>
+</ion-header>
+
+<ion-content>
+	<div class="select-service" > 
+		<h3>Sub-services</h3>
+		<ion-list >
+			<ion-item class="ion-no-padding" lines="full" *ngFor= "let subservice of subservices; let i = index" >
+        <ion-checkbox [(ngModel)]="subservice.isChecked" (ionChange)="orderSelect($event, subservice)" 
+         slot="start"></ion-checkbox>
+        <!-- (click)="clickSelectBox(subservice)" slot="start"></ion-checkbox> -->
+        <label>{{subservice.title}}<p>{{subservice.duration}} min <span></span></p></label>
+				<ion-buttons class="brn-icon-right" slot="end">€{{subservice.price}}</ion-buttons>
+			</ion-item>
+		</ion-list>
+	</div>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <label slot="start"><span>{{selectedServices.length}} Service </span>€{{total}}</label>
+	<ion-buttons class="custom-brn" slot="end" (click)="goToStaff(serviceList)">Continue</ion-buttons>
+  </ion-toolbar>
+</ion-footer>

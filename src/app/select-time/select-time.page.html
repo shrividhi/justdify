@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="goBack()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Select Date & Time</ion-title>
+    <ion-buttons slot="end" href="#" class="stepe-right">Step 3</ion-buttons>
+  </ion-toolbar>
+  <ion-list class="pick-month">
+		<ion-item lines="none" class="ion-no-padding">
+			<ion-label slot="start">Pick Date</ion-label>
+			<ion-button  >
+				<ion-datetime display-format="DD MMM YYYY" #myPicker [(ngModel)]="selectedDate" [min]="minDate" (ionChange)="updateMyDate(myPicker.value)"></ion-datetime>
+			</ion-button>
+			<!-- <ion-select slot="end" value="brown" okText="Okay" cancelText="Dismiss"> -->
+			  <!-- <ion-select-option value="brown">Jan</ion-select-option>
+		      <ion-select-option value="blonde">Far</ion-select-option>
+		      <ion-select-option value="black">Mar</ion-select-option>
+		      <ion-select-option value="red">Apr</ion-select-option> -->
+		    <!-- </ion-select> -->
+		</ion-item>
+  </ion-list>
+  <!-- <ul class="setect-date">
+  	  <li><ion-buttons class="date-btn">08<span>Wed</span></ion-buttons></li>
+  </ul> -->
+</ion-header>
+
+<ion-content>
+	<div class="pick-time"> 
+		<h3>Pick Time</h3>
+		<ion-list class="pick-time-list">
+			<ion-item lines="full" *ngFor="let timing of timings">
+				<ion-label slot="start">{{timing.start_time}}</ion-label>
+				<ion-buttons class="profile-icon-right" slot="end" (click)="reviewOrder(timing.start_time)"><ion-icon name="chevron-forward-outline"></ion-icon></ion-buttons>
+			</ion-item>
+		</ion-list>
+	</div>
+</ion-content>

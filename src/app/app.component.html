@@ -1,0 +1,69 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      
+      <ion-content>
+        <div class="profile-list left-menu" id="main">
+          <ion-list class="left-menu-list">
+            <ion-menu-toggle auto-hide="false" *ngIf="env.loginState === false" >
+              <ion-header class="profile-top">
+                <ion-list class="ion-no-padding">
+                    <ion-item class="ion-no-padding" lines="none">
+                      <ion-buttons class="profile-image"><ion-img src='./assets/img/image.png'></ion-img></ion-buttons>
+                    </ion-item>
+                    <ion-item class="ion-no-padding profile-head" lines="none">
+                      <ion-button fill="clear" class="edit-profile-btn" [routerLink]="['/login']">Login</ion-button>
+                     </ion-item>
+                  </ion-list>
+              </ion-header>
+            </ion-menu-toggle>
+            <ion-menu-toggle auto-hide="false" *ngIf="env.loginState === true" >
+              <ion-header class="profile-top">
+                <ion-list class="ion-no-padding">
+                    <ion-item class="ion-no-padding" lines="none">
+                      <ion-buttons class="profile-image"><ion-img src={{UserImage}}></ion-img></ion-buttons>
+                    </ion-item>
+                    <ion-item class="ion-no-padding profile-head" lines="none">
+                      <h3>{{profileName}}</h3>
+                    </ion-item>
+                    <ion-item class="ion-no-padding" lines="none">
+                      <ion-button fill="clear" class="edit-profile-btn" (click)="goToProfile()">Edit Profile <ion-icon name="pencil"></ion-icon></ion-button>
+                    </ion-item>
+                  </ion-list>
+              </ion-header>
+            </ion-menu-toggle>
+            <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+              <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none"
+                detail="false" [class.selected]="selectedIndex == i">
+                <!-- <ion-buttons class="profile-icon-left" slot="start">
+                  <ion-img src={{p.icon}}></ion-img>
+                </ion-buttons> -->
+                <label>{{p.title}}</label>
+                <ion-buttons  class="profile-icon-right" slot="end">
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </ion-buttons>
+              </ion-item>
+            </ion-menu-toggle>
+
+            <ion-menu-toggle auto-hide="false" *ngIf="env.loginState === true" >
+            <ion-item lines="none">
+              <!-- <ion-buttons class="profile-icon-left" slot="start"><ion-img src="../../assets/img/profile-list-icon8.png"></ion-img></ion-buttons> -->
+              <label>Logout</label>
+              <ion-buttons class="profile-icon-right" slot="end" (click)="logOut()"><ion-icon name="chevron-forward-outline"></ion-icon></ion-buttons>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="false" *ngIf="env.loginState === false" >
+            <ion-item lines="none">
+              <!-- <ion-buttons class="profile-icon-left" slot="start"><ion-img src="../../assets/img/profile-list-icon8.png"></ion-img></ion-buttons> -->
+              <label>Login</label>
+              <ion-buttons class="profile-icon-right" slot="end" [routerLink]="['/login']"><ion-icon name="chevron-forward-outline"></ion-icon></ion-buttons>
+            </ion-item>
+          </ion-menu-toggle>
+          </ion-list>
+        </div>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

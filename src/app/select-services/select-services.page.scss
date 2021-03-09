@@ -1,0 +1,150 @@
+ion-header {
+	background-color: #1a608e;
+	background: linear-gradient(to bottom, #1a608e 1%, #1b8b86 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#1a608e", endColorstr="#1b8b86",GradientType=0 );
+	padding-top: 15px;
+    padding-bottom: 15px;
+}
+ion-title {
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+}
+ion-header ion-buttons {
+    min-width: 30px;
+}
+ion-toolbar {
+    --min-height: 45px;
+}
+
+.stepe-right {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 500;
+    font-family: "Raleway", sans-serif;
+}
+.services-btn-list {
+    margin: 0 -10px;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    overflow: auto;
+}
+.services-btn-list li {
+    display: inline-block;
+    padding: 6px 7px;
+}
+.services-btn-list ion-buttons {
+    background: transparent;
+    border: 1px solid #fff;
+    font-size: 13px;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 40px;
+    min-width: 74px;
+    display: block;
+    font-weight: 600;
+    min-height: 40px;
+    white-space: nowrap;
+}
+.services-btn-list ion-buttons:hover {
+    background: #fff;
+    color: #002423;
+}
+.services-btn-list ion-buttons:hover span {
+    background: #fff;
+    color: #002423;
+}
+.services-btn-list ion-buttons span {
+    background: #fff;
+    display: inline-block;
+    padding: 1px 5px;
+    min-width: 18px;
+    border-radius: 18px;
+}
+h3 {
+    font-size: 18px;
+    color: #002423;
+    margin: 20px 20px 10px;
+}
+label {
+    color: #002423;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Raleway", sans-serif;
+}
+p {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: #666;
+}
+p span { margin-left: 10px; line-height: 22px;}
+.brn-icon-right {
+    text-align: center;
+    color: #21B5AE;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Raleway", sans-serif;
+}
+ion-checkbox {
+    width: 40px;
+    height: 40px;
+    --border-width: 1px;
+    --border-color: #D8D8D8;
+    --border-radius: 5px;
+    --background-checked: #21B5AE;
+    --border-color-checked: #21B5AE;
+    margin-inline-end: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-inline-start: 0px;
+    --size: 12px; 
+    --padding: 6px;
+}
+.select-service ion-item {
+    --padding-start: 20px;
+    --padding-end: 20px;
+    --padding-top: 5px;
+    --padding-bottom: 5px;
+}
+ion-checkbox.checkbox-checked {
+    background: #21B5AE;
+    padding: 10px;
+    border-radius: 5px;
+    --checkmark-width: 4px;
+}
+ion-item.item-checkbox-checked {
+    --background: #EFF3F3;
+}
+ion-checkbox.ios.checkbox-checked {
+    --checkmark-width: 2px;
+    padding: 6px;
+}
+ion-footer {
+    background: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 0 0 #ccc;
+    z-index: 9999;
+    border-top: 1px solid #ddd;
+}
+.custom-brn {
+    background: #21B5AE;
+    color: #fff;
+    font-size: 13px;
+    text-transform: uppercase;
+    padding: 9px 15px; 
+    border-radius: 20px;
+}
+ion-footer label {
+    font-size: 18px;
+}
+ion-footer label span {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+    line-height: 20px;
+}

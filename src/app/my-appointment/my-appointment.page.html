@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)=goBack()>
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>My Appointment</ion-title>
+    <ion-buttons slot="end" href="#">
+      <!-- <ion-icon name="arrow-back-outline"></ion-icon> -->
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="my-appointment">
+		<!-- <ul class="services-btn-list">
+			<li><ion-buttons href="#">All</ion-buttons></li>
+			<li><ion-buttons href="#">Upcoming</ion-buttons></li>
+			<li><ion-buttons href="#">Complete</ion-buttons></li>
+		</ul> -->
+		<ion-card *ngFor= "let appointmentList of appointmentLists">
+			<ion-card-content>
+		    	<ion-button fill="clear" class="confirm-btn"><ion-img src="../../assets/img/check-circle.png"></ion-img> Confirmed</ion-button>
+		    	<h4>{{appointmentList.bookingTimeSlot.date}} at {{appointmentList.bookingTimeSlot.time}}</h4>
+		    	<p>{{appointmentList.Saloon.saloon_name}}</p>
+		    	<h4>{{appointmentList.bookingTimeSlot.treatment}}</h4>
+		  	</ion-card-content>
+			<ion-item lines="none">
+		    	<h4>Total</h4>
+		    	<ion-button fill="clear" slot="end">€{{appointmentList.total_amount}}</ion-button>
+		  	</ion-item>	  	
+		</ion-card>
+	</div>
+</ion-content>

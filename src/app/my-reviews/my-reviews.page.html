@@ -1,0 +1,31 @@
+<ion-header>
+	<ion-toolbar>
+	    <ion-buttons slot="start" (click)= "goBack()">
+	      <ion-icon name="arrow-back-outline"></ion-icon>
+	    </ion-buttons>
+	    <ion-title>My Reviews</ion-title>
+	    <ion-buttons slot="end" href="#">
+	      <!-- <ion-icon name="arrow-back-outline"></ion-icon> -->
+	    </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="category">
+		
+		<ion-list *ngFor="let reviewList of reviewLists">
+		  	<ion-item class="ion-no-padding salon-row" lines="none">
+			  <ion-avatar slot="start">
+			    <ion-img src={{reviewList.profile_file}}></ion-img>
+			  </ion-avatar>
+			  <ion-label>
+			  	<!-- <ion-buttons slot="end" class="salon-dis"><ion-icon name="trash"></ion-icon></ion-buttons> -->
+			  	<h3>{{reviewList.saloon_name}}</h3>
+			  	<p class="salon-addr">{{reviewList.address}}</p>
+			  	<ion-buttons slot="end"  class="salon-star"><ion-icon name="star"></ion-icon> <ion-icon name="star"> </ion-icon><ion-icon name="star"> </ion-icon><ion-icon name="star"></ion-icon> <ion-icon name="star"></ion-icon></ion-buttons>
+			  	<!-- <ion-buttons slot="end" class="salon-time">Edit Your Review</ion-buttons> -->
+ 			  </ion-label>
+			</ion-item> 
+		</ion-list>
+	</div>
+</ion-content>

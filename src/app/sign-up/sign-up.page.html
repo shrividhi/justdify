@@ -1,0 +1,83 @@
+<ion-content>
+	<div class="full-bg">
+		<div class="login-box">
+			<div class="login-logo"><ion-button href="#" fill="clear"><ion-img src="../../assets/img/logo.png"></ion-img></ion-button></div>
+			<div class="login-bg">
+
+				<form [formGroup]= "registerForm">
+					<h3>Sign Up</h3>
+				    <p class="sub-head">Please register your account.</p>
+				  <ion-list>
+				  
+				    <ion-item class="form-feild">
+					  <ion-label position="stacked">Name</ion-label>
+					  <ion-input formControlName="username" placeholder="Name"></ion-input>
+					  <ion-button fill="clear" class="over-icon">
+					  	<ion-img src="../../assets/img/user-icon.png"></ion-img>
+					  </ion-button>
+					  <p class="validation-error" *ngIf="registerForm.controls.username.errors  
+					  && registerForm.controls.username.dirty">Please enter valid username</p>
+					</ion-item>
+
+					<ion-item class="form-feild">
+					  <ion-label position="stacked">Mobile Number</ion-label>
+					  <ion-input formControlName="phoneNumber" placeholder="Mobile Number"></ion-input>
+					  <ion-button fill="clear" class="over-icon">
+					  	<ion-img src="../../assets/img/phone-icon.png"></ion-img>
+					  </ion-button>
+					  <p class="validation-error" *ngIf="registerForm.controls.phoneNumber.errors  
+					  && registerForm.controls.phoneNumber.dirty">Please enter valid phoneNumber</p>
+					</ion-item>
+
+					<ion-item class="form-feild">
+					  <ion-label position="stacked">Email Address</ion-label>
+					  <ion-input formControlName="email" placeholder="Email Address"></ion-input>
+					  <ion-button fill="clear" class="over-icon">
+					  	<ion-img src="../../assets/img/mail-icon.png"></ion-img>
+					  </ion-button>
+					  <p class="validation-error" *ngIf="registerForm.controls.email.errors  
+					  && registerForm.controls.email.dirty">Please enter valid email</p>
+					</ion-item>
+
+					<ion-item class="form-feild">
+					  <ion-label position="stacked">Create Password</ion-label>
+					  <ion-input formControlName="password" placeholder="Create Password"></ion-input>
+					  <ion-button *ngIf="!showPass"  fill="clear" class="over-icon"  (click)="showPassword()">
+						<ion-img src="../../assets/img/eye-view.png" ></ion-img>
+					  </ion-button>
+					  <ion-button *ngIf="showPass"  fill="clear" class="over-icon-password"  (click)="showPassword()">
+					    <ion-img src="../../assets/img/eye-view.png" ></ion-img>
+					  </ion-button>
+					  <p class="validation-error" *ngIf="registerForm.controls.password.errors  
+					  && registerForm.controls.password.dirty">Please enter valid password</p>
+					</ion-item>
+
+					<!-- <ion-item class="form-feild confirm-check" lines="none">
+						<ion-checkbox formControlName= 'is_agree' checked="true" slot="start"></ion-checkbox> 
+						<ion-label>I confirm I'm 16 years old.</ion-label>
+					</ion-item> -->
+
+				    <ion-item class="form-feild" lines="none">
+					  <ion-button class="custom-button" (click)= "doRegister()" [disabled]="!registerForm.valid" >SIGN UP</ion-button>
+					</ion-item>
+
+					<!-- <ion-item class="form-feild" lines="none">
+						<p>Or Login using social media</p>
+					</ion-item> -->
+
+					<!-- <ion-item class="form-feild" lines="none">
+						<ul class="social-link">
+							<li><ion-button fill="clear"><ion-img src="../../assets/img/fb-icon.png"></ion-img></ion-button></li>
+							<li><ion-button fill="clear"><ion-img src="../../assets/img/twitter-icon.png"></ion-img></ion-button></li>
+							<li><ion-button  fill="clear"><ion-img src="../../assets/img/mail-b-icon.png"></ion-img></ion-button></li>
+						</ul>
+					</ion-item> -->
+
+				</ion-list>
+				</form>
+				
+			</div>
+			<p>Already have an account? <ion-button fill="clear" [routerLink]="['/login']">Login here</ion-button></p>
+		</div>
+	</div>
+</ion-content>

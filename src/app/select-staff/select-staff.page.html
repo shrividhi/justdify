@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="goBack()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Select Staff</ion-title>
+    <ion-buttons slot="end" href="#" class="stepe-right">Step 2</ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-list class="chat-con-list">
+			<ion-item lines="full" *ngFor="let staffmember of staff">
+				<ion-thumbnail slot="start">
+					<ion-img src={{staffmember.profile_file}}></ion-img>
+				</ion-thumbnail>
+				<h4>{{staffmember.full_name}} <span>Maximum Availability</span></h4>
+				<ion-buttons class="profile-icon-right" slot="end" (click)="goToSelectTime(staffmember)"><ion-icon name="chevron-forward-outline"></ion-icon></ion-buttons>
+			</ion-item>
+		</ion-list>
+</ion-content>

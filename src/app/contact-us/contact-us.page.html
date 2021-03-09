@@ -1,0 +1,71 @@
+<ion-header class="profile-top">
+	<ion-toolbar>
+		<ion-buttons slot="start" (click)="goBack()">
+			<ion-icon name="arrow-back-outline"></ion-icon>
+		  </ion-buttons>
+	    <ion-title>Contact Us</ion-title>
+	    <ion-buttons slot="end" >
+	      <!-- <ion-icon name="arrow-back-outline"></ion-icon> -->
+	    </ion-buttons>
+    </ion-toolbar>
+    
+		<ion-list class="ion-no-padding">
+			<ion-item class="ion-no-padding" lines="none">
+				<ion-buttons ><ion-img src="../../assets/img/logo.png"></ion-img></ion-buttons>
+			</ion-item>
+			<!-- <ion-item class="ion-no-padding" lines="none">
+				<ion-button  fill="clear" class="con-btn"><ion-icon name="logo-whatsapp"></ion-icon> +1 205 485 4856</ion-button>
+			</ion-item> -->
+			<ion-item class="ion-no-padding" lines="none">
+				<ion-button fill="clear" class="con-btn"><ion-icon name="mail-outline" href="mailto:info@justdify.com"></ion-icon>info@justdify.com</ion-button>
+			</ion-item>
+
+		</ion-list>
+</ion-header>
+<ion-content>
+	<div class="login-bg">
+		<form [formGroup]= "contactForm" >
+            <ion-list>
+				<ion-item class="form-feild">
+				  <ion-label position="stacked">Your Name</ion-label>
+				  <ion-input formControlName="name" placeholder="Your Name"></ion-input>
+				  <ion-button fill="clear" class="over-icon"><ion-img src="../../assets/img/user-icon.png"></ion-img></ion-button>
+				</ion-item>
+				
+				<ion-item class="form-feild">
+				  <ion-label position="stacked">Your Email</ion-label>
+				  <ion-input formControlName="email" placeholder="Your Email"></ion-input>
+				  <ion-button fill="clear" class="over-icon"><ion-img src="../../assets/img/mail-icon.png"></ion-img></ion-button>
+				</ion-item>
+
+				<!-- <ion-item class="form-feild mob-nubmer">
+					<ion-label position="stacked">Mobile Number</ion-label>
+					<span class="select-code">
+					  <ion-img src="../../assets/img/flag.png"></ion-img>
+					  <ion-select value="+1" placeholder="+1">
+						  <ion-select-option value="+1">+1</ion-select-option>
+						  <ion-select-option value="+2">+2</ion-select-option>
+					  </ion-select>
+					</span>
+					
+					<ion-input formControlName= "mobile" placeholder="Mobile Number"></ion-input>
+					<ion-button fill="clear" class="over-icon"><ion-img src="../../assets/img/phone-icon.png"></ion-img></ion-button>
+				</ion-item> -->
+
+				<ion-item class="form-feild">
+				  <ion-label position="stacked">Your Message</ion-label>
+				  <ion-textarea formControlName="message" placeholder="Enter Your Message"></ion-textarea>
+				  <ion-button  fill="clear" class="over-icon"><ion-img src="../../assets/img/profile-list-icon6.png"></ion-img></ion-button>
+				</ion-item>
+				
+				<ion-item class="form-feild" lines="none">
+				  <ion-button class="custom-button" [disabled]="!contactForm.valid" (click)= "contactUs()">submit</ion-button>
+				</ion-item>
+				
+			</ion-list>
+		</form>
+				
+	</div>
+	<p>We'll get back to you soon</p>
+</ion-content>
+

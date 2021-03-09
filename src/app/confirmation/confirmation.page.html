@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+	<!-- <ion-buttons slot="start" (click)="goBack()">
+		<ion-icon name="arrow-back-outline"></ion-icon>
+	  </ion-buttons> -->
+    <ion-title>Success</ion-title>
+    <ion-buttons slot="end" class="stepe-right"></ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="review-order">
+		<h3>{{bookedDate}} at {{bookedTime}}</h3>
+		<ion-button fill="clear" class="confirm-btn"><ion-img src="../../assets/img/feather-check-circle.png"></ion-img> Confirmed</ion-button>
+	
+		<ion-list>
+			<ion-item lines="full" class="ion-no-padding">
+				<ion-label slot="start">{{saloonName}}<span>{{addresss}}</span></ion-label>
+				<ion-buttons class="icon-right" slot="end"><ion-img src={{profileImage}}></ion-img></ion-buttons>
+			</ion-item>
+
+			<ion-item lines="none" class="ion-no-padding">
+				<div class="btn-group">
+					<ion-buttons class="success-btn">
+						<span><ion-img src="../../assets/img/directions.png" (click)="getDirections()"></ion-img></span>
+						Direction
+					</ion-buttons>
+					<ion-buttons class="success-btn">
+						<span><ion-img src="../../assets/img/calander.png"></ion-img></span>
+						Reschedule
+					</ion-buttons>
+					<ion-buttons class="success-btn" (click)="cancelBooking()">
+						<span><ion-img src="../../assets/img/metro-cancel.png"></ion-img></span>
+						Cancel
+					</ion-buttons>
+				</div>
+			</ion-item>
+  		</ion-list>
+  	</div>
+  	<div class="payment-method">
+  		<ion-list>
+			<ion-item lines="full" class="ion-no-padding" *ngFor="let services of serviceData">
+				<ion-label slot="start">{{services.title}}<span>{{services.duration}} min</span></ion-label>
+				<ion-buttons class="btn-right" slot="end">€{{services.price}}</ion-buttons>
+			</ion-item>
+			<ion-item lines="none" class="ion-no-padding">
+				<ion-label slot="start">Total</ion-label>
+				<ion-buttons class="total-btn" slot="end">€{{price}}</ion-buttons>
+			</ion-item>
+			<ion-item lines="none" class="ion-no-padding">
+				<ion-buttons class="cuttom-btn" [routerLink]="['/main']">Back to home</ion-buttons>
+			</ion-item>
+  		</ion-list>
+  	</div>
+  	
+</ion-content>
+

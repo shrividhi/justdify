@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="goBack()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Card Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]= "cardForm">
+  <ion-grid no-padding>
+      <ion-row>
+        <ion-col no-padding size-xs="12">
+            <ion-label position="floating">Card holder name</ion-label>
+            <ion-input no-padding placeholder=" Enter Card holder name" formControlName="name"></ion-input>
+        </ion-col>
+        <ion-col no-padding size-xs="12">
+            <ion-label position="floating">Card number</ion-label>
+            <ion-input no-padding placeholder="Enter Card number" formControlName="number"></ion-input>
+        </ion-col>
+        <ion-col no-padding size-xs="6">
+            <ion-label position="floating">Expiry Month</ion-label>
+            <ion-input no-padding placeholder="Enter Expiry Month" formControlName="month"></ion-input>
+        </ion-col>
+        <ion-col no-padding size-xs="6">
+          <ion-label position="floating">Expiry Year</ion-label>
+          <ion-input no-padding placeholder="Enter Expiry Year" formControlName="year"></ion-input>
+      </ion-col>
+        <ion-col no-padding size-xs="12">
+           <ion-label position="floating">CVV/CVV2</ion-label>
+            <ion-input no-padding placeholder="Enter CVV/CVV2" formControlName="cvv"></ion-input>
+        </ion-col>
+    </ion-row>
+</ion-grid>
+</form>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <label slot="start"><span>Total</span>€{{total}}</label>
+  <ion-buttons  class="custom-brn" slot="end" (click)="makePayment()">Pay</ion-buttons>
+  </ion-toolbar>
+</ion-footer>

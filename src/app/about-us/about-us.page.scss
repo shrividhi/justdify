@@ -1,0 +1,63 @@
+
+.profile-top ion-item ion-img {
+    width: 144px;
+    height: 40px;
+}
+.profile-top ion-item ion-buttons {
+    margin: 20px auto;
+    position: relative;
+    z-index: 9;
+}
+.profile-top .con-btn {
+    margin: 5px auto 0;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 500;
+    font-family: "Raleway", sans-serif;
+    letter-spacing: 0;
+    text-transform: inherit;
+}
+.con-btn ion-icon {
+    margin-right: 7px;
+}
+ion-title {
+    font-size: 18px;
+    color: #fff;
+    text-align: center; 
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+}
+.profile-top {
+    padding: 10px 15px 20px;
+}
+.about-us {
+    padding: 20px;
+    text-align: center;
+}
+p {
+    font-size: 13px;
+    color: #747474;
+    line-height: 22px;
+}
+h3 {
+    color: #333333;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 22px;
+}
+.about-us .con-btn {
+    font-size: 14px;
+    color: #000;
+    font-weight: 500;
+    height: auto;
+    font-family: "Raleway", sans-serif;
+    letter-spacing: 0;
+    text-transform: inherit;
+}
+.get-btn {
+    font-size: 18px;
+    color: #21B5AE;
+    text-transform: capitalize;
+    letter-spacing: 0;
+    font-family: "Raleway", sans-serif;
+}

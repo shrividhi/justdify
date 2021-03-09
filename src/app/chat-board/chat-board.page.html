@@ -1,0 +1,42 @@
+<ion-header>
+	<ion-toolbar>
+	    <ion-buttons slot="start" (click)= "goBack()">
+	      <ion-icon name="arrow-back-outline"></ion-icon>
+	    </ion-buttons>
+	    <ion-title>
+			<ion-img class="cat-icon-image" src={{userMessages.from_user_picture}}></ion-img> {{userMessages.from_user}}</ion-title>
+	</ion-toolbar>
+</ion-header>
+<ion-content>
+		<div class="chat-page" >
+			<h5>Today</h5>
+			<ion-list class="ion-no-padding" *ngFor="let messages of chatMessages">
+				<ion-item class="ion-no-padding" lines="none" *ngIf="messages.from_user_id==fromUserId">
+					<div slot="start" class="rec-chat">
+						<p class="chat-text">{{messages.message}}</p>
+						<span class="chat-time">{{messages.created_on}}</span>
+					</div>
+				</ion-item>
+				<ion-item class="ion-no-padding" lines="none" *ngIf="messages.from_user_id != fromUserId">
+					<div slot="end" class="rep-chat">
+						<p class="chat-text">{{messages.message}}</p>
+						<span class="chat-time">{{messages.created_on}}</span>
+					</div>
+				</ion-item>
+			</ion-list>
+	
+			<ion-list class="ion-no-padding chat-box">
+				<ion-item class="ion-no-padding" lines="none">
+					<ion-button fill="clear" class="chat-icon">
+						<ion-icon name="happy-outline"></ion-icon>
+					</ion-button>
+					<ion-input type="text" placeholder="Message" [(ngModel)]="message"></ion-input>
+					<ion-button  fill="clear" class="chat-btn" (click)="sendMessage(message)"><ion-icon name="send-sharp"></ion-icon></ion-button>
+				</ion-item>
+			</ion-list>
+		</div>
+  </ion-content>
+  
+
+
+

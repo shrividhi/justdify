@@ -1,0 +1,107 @@
+ion-header {
+	background-color: #1a608e;
+	background: linear-gradient(to bottom, #1a608e 1%, #1b8b86 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#1a608e", endColorstr="#1b8b86",GradientType=0 );
+	padding-top: 15px;
+    padding-bottom: 15px;
+}
+ion-title {
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+}
+ion-header ion-buttons {
+    min-width: 30px;
+}
+ion-toolbar {
+    --min-height: 45px;
+}
+ion-content {
+    --background: rgba(122, 155, 153, 0.3);
+    background: #fff;
+}
+.my-appointment {
+    padding: 20px;
+}
+.services-btn-list {
+    margin: 0 -10px;
+    padding: 0;
+    text-align: center;
+    display: flex;
+}
+.services-btn-list li {
+    display: inline-block;
+    padding: 6px 7px;
+}
+.services-btn-list ion-buttons {
+    background: #21b5ae3d;
+    border: 1px solid #21B5AE;
+    font-size: 13px;
+    color: #002423;
+    padding: 10px 20px;
+    border-radius: 40px;
+    min-width: 74px;
+    display: block;
+    font-weight: 600;
+    min-height: 40px;
+    white-space: nowrap;
+}
+.services-btn-list ion-buttons:hover {
+    background: #21B5AE;
+    color: #fff;
+}
+.services-btn-list ion-buttons:hover span {
+    background: #fff;
+    color: #002423;
+}
+.services-btn-list ion-buttons span {
+    background: #fff;
+    display: inline-block;
+    padding: 1px 5px;
+    min-width: 18px;
+    border-radius: 18px;
+}
+ion-card {
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+.confirm-btn {
+    background: #21B5AE;
+    font-size: 12px;
+    text-transform: capitalize;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 30px;
+    margin-bottom: 12px;
+    font-family: "Raleway", sans-serif;
+}
+.confirm-btn ion-img {
+    margin-right: 5px;
+}
+ion-card h4 {
+    color: #002423;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+}
+ion-card p {
+    margin-bottom: 10px !important;
+    font-size: 12px !important;
+}
+ion-card ion-item {
+    border-top: 1px solid #ddd;
+    padding-top: 5px;
+}
+ion-card ion-item ion-button {
+    color: #002423;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+}
+ion-card-content {
+    padding-bottom: 10px;
+}
+ion-card {
+    border-radius: 6px;
+    margin-bottom: 17px;
+}

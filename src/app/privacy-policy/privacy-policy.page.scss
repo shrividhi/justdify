@@ -1,0 +1,53 @@
+ion-header {
+	background-color: #1a608e;
+	background: linear-gradient(to bottom, #1a608e 1%, #1b8b86 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#1a608e", endColorstr="#1b8b86",GradientType=0 );
+	padding-top: 15px;
+    padding-bottom: 15px;
+}
+ion-title {
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    padding-inline-start: 50px;
+    padding-inline-end: 50px;
+}
+ion-header ion-buttons {
+    min-width: 30px;
+}
+ion-toolbar {
+    --min-height: 45px;
+}
+.term-cond {
+    padding: 20px;
+}
+h3 {
+    font-size: 16px;
+    color: #21B5AE;
+}
+p {
+    font-size: 13px;
+    color: #747474;
+    font-weight: 500;
+    line-height: 22px;
+}
+.btn-full {
+    --background-activated: #09aba3;
+    --background-focused: #09aba3;
+    --background-hover: #09aba3;
+    --background: #21B5AE;
+    font-size: 13px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    --padding-top: 5px;
+    --padding-bottom: 5px;
+    height: 44px;
+    margin-bottom: 15px;
+    --border-radius: 45px;
+    font-family: "Raleway", sans-serif;
+    box-shadow: 0 4px 8px rgba(33, 181, 174, 0.4);
+    border-radius: 45px;
+}

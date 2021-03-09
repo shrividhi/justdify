@@ -1,0 +1,92 @@
+ion-header {
+	background-color: #1a608e;
+	background: linear-gradient(to bottom, #1a608e 1%, #1b8b86 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#1a608e", endColorstr="#1b8b86",GradientType=0 );
+	padding-top: 15px;
+    padding-bottom: 15px;
+}
+ion-title {
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+}
+ion-header ion-buttons {
+    min-width: 30px;
+}
+ion-toolbar {
+    --min-height: 45px;
+}
+.chat-page {
+    padding: 20px;
+}
+
+.cat-icon-image{
+    width: 62px;
+    height: 62px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50px;
+    overflow: hidden;
+}
+.search-chat ion-input {
+    background: #D6ECEB;
+    border-radius: 5px;
+    --padding-top: 10px;
+    --padding-end: 30px;
+    --padding-bottom: 10px;
+    --padding-start: 15px !important;
+}
+.search-chat ion-button {
+    top: 5px;
+    z-index: 9;
+    right: 4px;
+    color: #333333;
+}
+.chat-con-list {
+    margin-top: 20px;
+    padding: 0;
+}
+.chat-con-list ion-thumbnail {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.chat-con-list ion-thumbnail ion-img {
+    width: 51px;
+}
+.chat-con-list h4 {
+    font-size: 15px;
+    color: #002423;
+    font-weight: 600;
+    font-family: "Raleway", sans-serif;
+    margin: 0;
+}
+.chat-con-list h4 span {
+    display: block;
+    font-size: 13px;
+    color: #747474;
+    font-weight: 500;
+    line-height: 20px;
+}
+.chat-con-list .chat-time {
+    font-size: 12px;
+    color: #747474;
+    position: relative;
+    margin-top: -25px;
+}
+.chat-qua {
+    position: absolute;
+    right: 0;
+    background: #21B5AE;
+    color: #fff;
+    font-size: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 15px;
+    padding: 0 7px;
+    top: 30px;
+}

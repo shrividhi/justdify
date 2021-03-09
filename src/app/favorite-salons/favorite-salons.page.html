@@ -1,0 +1,32 @@
+<ion-header>
+	<ion-toolbar>
+	    <ion-buttons slot="start" (click)= "goBack()">
+	      <ion-icon name="arrow-back-outline"></ion-icon>
+	    </ion-buttons>
+	    <ion-title>Favorite Salons</ion-title>
+	    <ion-buttons slot="end" href="#">
+	      <!-- <ion-icon name="arrow-back-outline"></ion-icon> -->
+	    </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="category">
+		
+		<ion-list *ngFor="let favoriteList of favoriteLists">
+		  	<ion-item class="ion-no-padding salon-row" lines="none">
+			  <ion-avatar slot="start">
+			    <ion-img src={{favoriteList.profile_file}}></ion-img>
+			  </ion-avatar>
+			  <ion-label>
+			  	<ion-buttons slot="end" href="#" class="salon-dis"><ion-icon name="heart"></ion-icon></ion-buttons>
+			  	<h3 (click)="goToSalonDetail()">{{favoriteList.saloon_name}}</h3>
+			  	<p class="salon-addr">{{favoriteList.address}}</p>
+			  	<span><ion-icon name="star"></ion-icon>{{favoriteList.average_rating}}</span>
+			  	<p class="salon-time">{{favoriteList.opening_time}}  -  {{favoriteList.closing_time}}</p>
+			  	<ion-button slot="end" class="custom-btn" (click)="bookSaloon(favoriteList)">Book</ion-button>
+			  </ion-label>
+			</ion-item>
+		</ion-list>
+	</div>
+</ion-content>

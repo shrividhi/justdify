@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)= "goBack()">
+		<ion-icon name="arrow-back-outline"></ion-icon>
+	  </ion-buttons>
+    <ion-title>Review and Payment</ion-title>
+    <ion-buttons slot="end" class="stepe-right">Step 4</ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-list class="review-order">
+		<ion-item lines="full" class="ion-no-padding">
+			<ion-label>{{date}} at {{time}} 
+				<!-- <span>30 min Duration, ends at 11:30 am</span> -->
+			 </ion-label>
+		</ion-item>
+		<ion-item lines="full" class="ion-no-padding">
+			<ion-label slot="start">{{saloonname}}<span>{{saloonaddress}}</span></ion-label>
+			<ion-buttons class="icon-right" slot="end"><ion-img src={{profilePicture}}></ion-img></ion-buttons>
+		</ion-item>
+		<ion-item lines="full" class="ion-no-padding" *ngFor="let selectedService of selectedServices">
+			<ion-label slot="start">{{selectedService.title}}<span>{{selectedService.duration}} min</span></ion-label>
+			<ion-buttons class="btn-right" slot="end">€{{selectedService.price}}</ion-buttons>
+		</ion-item>
+		<ion-item lines="none" class="ion-no-padding">
+			<ion-label slot="start">Total</ion-label>
+			<ion-buttons class="total-btn" slot="end">€{{total}}</ion-buttons>
+		</ion-item>
+  	</ion-list>
+  	<div class="payment-method">
+  		<h3>Payment Method</h3>
+  		<ion-list>
+			<ion-radio-group value="biff">
+				<ion-item lines="none" class="ion-no-padding">
+					<ion-thumbnail slot="start">
+						<ion-img src="../../assets/img/paypal.png"></ion-img>
+					</ion-thumbnail>
+					<ion-label>Pay with PayPal</ion-label>
+					<ion-radio slot="end" value="paypal" name="payment" (click)="payWithPaypal()"></ion-radio>
+				</ion-item>
+				<ion-item lines="none" class="ion-no-padding">
+					<ion-thumbnail slot="start">
+						<ion-img src="../../assets/img/visa.png"></ion-img>
+					</ion-thumbnail>
+					<ion-label>Credit/Debit Card</ion-label>
+					<ion-radio slot="end" value="card" name="payment" (click)="payByCard()"></ion-radio>
+					</ion-item>
+				<ion-item lines="none" class="ion-no-padding">
+					<ion-thumbnail slot="start">
+						<ion-img src="../../assets/img/ban-transfer.png"></ion-img>
+					</ion-thumbnail>
+					<ion-label slot="start">Pay at Store</ion-label>
+					<ion-radio slot="end"  value="store" name="payment" (click)="confirm()"></ion-radio>
+				</ion-item>
+			</ion-radio-group>
+	  	</ion-list>
+  	</div>
+  	
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+	<label slot="start"><span>Total</span>€{{total}}</label>
+	<!-- <ion-buttons  class="custom-brn" slot="end">Continue</ion-buttons> -->
+  </ion-toolbar>
+</ion-footer>

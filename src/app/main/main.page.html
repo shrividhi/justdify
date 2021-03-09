@@ -1,0 +1,121 @@
+<ion-header>
+  <ion-toolbar>
+	<ion-buttons slot="start" class="menu-toggle">
+		<ion-button>
+		  <ion-menu-button></ion-menu-button>
+		</ion-button>
+	  </ion-buttons>
+    
+    <ion-buttons slot="end" [routerLink]="['/chat']">
+      <ion-img src="../../assets/img/chat-icon.png"></ion-img>
+      <!-- <span class="sms-qua"></span> -->
+    </ion-buttons>
+  </ion-toolbar>
+  <div class="home-search"> 
+		<h3>Instant Bookings Find Salons and Spa near you</h3>
+		<ion-list class="ion-no-padding">
+			<ion-radio-group>
+				<ion-item class="ion-no-padding" lines="none" size="6">
+					<ion-radio value="cord" checked></ion-radio>
+					<ion-label>Gents</ion-label>
+					<ion-radio value="duesenberg"></ion-radio>
+					<ion-label>Ladies</ion-label>
+					<ion-item class="loc-saloon">
+						<ion-label>{{ isPlaceSearchEnabled ? 'Location' : 'Salon' }} </ion-label>
+						<ion-toggle (ionChange)="handleEvent($event)" [checked]="isPlaceSearchEnabled"></ion-toggle>
+					</ion-item>
+				</ion-item>
+			</ion-radio-group>
+			
+			<ion-item class="form-feild ion-no-padding" lines="none">
+				<ion-button fill="clear" class="verf-icon">
+					<ion-img src="../../assets/img/my-location.png" (click)="locateUser()"></ion-img>
+				</ion-button>
+				<ion-item *ngIf="isPlaceSearchEnabled == false;">
+        			<ion-searchbar type="text" [(ngModel)]="searchSalon" placeholder="Enter salon"></ion-searchbar>
+				</ion-item>
+				  
+				<ion-item *ngIf="isPlaceSearchEnabled == true;">
+					<ion-searchbar [(ngModel)]="autocomplete.input" (ionInput)="updateSearchResults()" placeholder="Search for a place"></ion-searchbar>
+					
+				</ion-item>
+				<ion-button fill="clear" class="over-icon" (click)="searchData()"><ion-icon name="search-outline"></ion-icon></ion-button>
+			</ion-item>
+		</ion-list>
+		<ul [hidden]="autocompleteItems.length == 0" class="search-list">
+			<li *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+				{{ item.description }}
+			</li>
+		</ul>
+	</div>
+</ion-header>
+
+<ion-content>
+	<div class="category">
+		<ion-list class="ion-no-padding">
+			<ion-item class="form-feild ion-no-padding" lines="none">
+				<h4 slot="start">Top Categories</h4>
+				<!-- <ion-buttons slot="end" href="#" class="view-all">View All</ion-buttons> -->
+			</ion-item>
+		</ion-list>
+				<ul class="cat-btn-row" >
+					<li *ngFor="let category of categories">
+						<ion-button fill="clear" class="cat-icon">
+						 <ion-img src={{category.image_file}}></ion-img>
+						</ion-button>
+						<p class="cat-text">{{category.title}} <span></span></p>
+					</li>
+				</ul>
+		<ion-list class="ion-no-padding">
+			<ion-item class="form-feild ion-no-padding" lines="none">
+				<h4 slot="start">Salon Nearby </h4>
+				<ion-buttons slot="end" class="view-all" (click)="viewAll()">View All</ion-buttons>
+			</ion-item>
+		</ion-list>
+		<ion-slides pager="true" [options]="slideOpts">
+			<ion-slide *ngFor="let salon of viewSalon">
+				<ion-card class="cat-card" (click)= "salonDetail(salon)">
+				<ion-img src="{{salon.profile_file}}"></ion-img>
+				<ion-card-content>
+				  <ion-list class="ion-no-padding">
+					  <ion-item class="form-feild ion-no-padding" lines="none">
+						  <h4 slot="start">{{salon.saloon_name}}<span>{{salon.address}}</span></h4>
+						  <ion-buttons slot="end" href="#" class="view-all"><ion-icon name="star"></ion-icon> {{salon.average_rating}}</ion-buttons>
+					  </ion-item>
+				  </ion-list>
+				</ion-card-content>
+			  </ion-card>
+			</ion-slide>
+		  </ion-slides> 
+
+	</div>
+</ion-content>
+
+<ion-footer>
+    <ion-tabs>
+    	<ion-tab-bar slot="bottom">
+		    <ion-tab-button tab="schedule">
+		      <ion-icon name="home" ></ion-icon>
+		      <ion-label>Home</ion-label>
+		    </ion-tab-button>
+
+		    <ion-tab-button tab="speakers" (click)="viewAll()">
+		      <ion-icon name="location-outline"></ion-icon>
+		      <ion-label>Nearby</ion-label>
+		    </ion-tab-button>
+
+		    <ion-tab-button tab="map" [routerLink]="['/my-appointment']">
+		      <ion-icon name="calendar-outline" ></ion-icon>
+		      <ion-label>Appointment</ion-label>
+		    </ion-tab-button>
+
+		    <ion-tab-button tab="about" (click)="myProfile()">
+		      <ion-icon name="person-outline"></ion-icon>
+		      <ion-label>My Profile</ion-label>
+		    </ion-tab-button>
+	  	</ion-tab-bar>
+	</ion-tabs>
+</ion-footer>
+
+
+

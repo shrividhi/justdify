@@ -1,0 +1,33 @@
+<ion-header>
+	<ion-toolbar>
+	    <ion-buttons slot="start" (click)= "goBack()">
+	      <ion-icon name="arrow-back-outline"></ion-icon>
+	    </ion-buttons>
+	    <ion-title>Messages</ion-title>
+	    <ion-buttons slot="end" href="#">
+	      <!-- <ion-icon name="arrow-back-outline"></ion-icon> -->
+	    </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+	<div class="chat-page">
+		<ion-list class="ion-no-padding">
+			<ion-item class="search-chat ion-no-padding" lines="none">
+				<ion-input></ion-input>
+				<ion-button fill="clear" class="over-icon"(click)="searchChat(key)"><ion-icon name="search-outline"></ion-icon></ion-button>
+			</ion-item>
+		</ion-list>
+
+		<ion-list class="chat-con-list" *ngFor="let chats of chatsList">
+			<ion-item (click)="goToChat(chats)" class="ion-no-padding">
+				<ion-thumbnail slot="start">
+					<ion-img class="cat-icon-image" src={{chats.to_user_picture}}></ion-img>
+				</ion-thumbnail>
+				<h4>{{chats.to_user}}<span>{{chats.last_message}}</span></h4>
+				<ion-buttons class="chat-time" slot="end"></ion-buttons>
+				<ion-buttons class="chat-qua" slot="end">{{chats.last_message_time}}</ion-buttons>
+			</ion-item>
+		</ion-list>
+
+	</div>
+</ion-content>

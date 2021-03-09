@@ -1,0 +1,50 @@
+<ion-header>
+	<div class="home-search search-loc"> 
+		<ion-list class="ion-no-padding">
+				  <ion-item class="ion-no-padding" lines="none" size="6">
+					  <ion-buttons slot="start" class="location-header" (click)= "goBack()"><ion-icon name="arrow-back-outline"></ion-icon></ion-buttons>
+					  <h4>
+						  <span>Your Location</span>
+						  <ion-buttons class="search-loc-btn"><ion-icon name="location-outline"></ion-icon>{{userCity}}</ion-buttons>
+					  </h4>
+					  <ion-buttons slot="end" (click)="goToFilter(nearBysalonsList)"><ion-img src="../../assets/img/filter-icon.png"></ion-img></ion-buttons>
+				  </ion-item>
+				  <ion-item class="form-feild ion-no-padding" lines="none">
+					  <ion-button fill="clear" class="verf-icon"><ion-img src="../../assets/img/my-location.png"></ion-img></ion-button>
+					  <ion-input></ion-input>
+					  <ion-button fill="clear" class="over-icon" (click)="searchDetails()"><ion-icon name="search-outline"></ion-icon></ion-button>
+				  </ion-item>
+	  
+			  </ion-list>
+		  </div>
+</ion-header>
+
+<ion-content>
+	<div class="category">
+		<ion-list class="ion-no-padding">
+			<ion-item class="select-salon ion-no-padding" lines="none">
+				<ion-label slot="start">Salon Nearby<span>Found place nearby you</span></ion-label>
+				<!-- <ion-select slot="end" placeholder="Gents" class="select-sm">
+			      <ion-select-option value="f">Gents</ion-select-option>
+			      <ion-select-option value="m">Female</ion-select-option>
+			    </ion-select> -->
+			</ion-item>
+		</ion-list>
+		
+		<ion-list *ngFor= "let salonList of nearBysalonsList">
+		  	<ion-item class="ion-no-padding salon-row" lines="none">
+			  <ion-avatar slot="start">
+			    <ion-img src="{{salonList.profile_file}}"></ion-img>
+			  </ion-avatar>
+			  <ion-label>
+			  	<span class="salon-dis">{{salonList.distance}}</span>
+			  	<h3>{{salonList.full_name}}</h3>
+			  	<p class="salon-addr">{{salonList.address}}</p>
+			  	<span><ion-icon name="star"></ion-icon>{{salonList.average_rating}}</span>
+			  	<p class="salon-time">{{salonList.opening_time}} - {{salonList.closing_time}}</p>
+			  	<ion-button slot="end" class="custom-btn" (click)="goToService(salonList)">Book</ion-button>
+			  </ion-label>
+			</ion-item>
+		</ion-list>
+	</div>
+</ion-content>

@@ -1,0 +1,197 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)= "goBack()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+    
+    <ion-buttons slot="end" (click)="favoriteSaloon()">
+	  <ion-icon name="heart-outline" (click)="favoriteSaloon()"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+	<div class="salon-banner"> 
+		
+		<ion-list class="ion-no-padding">
+			
+			<ion-item class="form-feild ion-no-padding" lines="none" >
+				<ion-label >
+					<h3>{{salonName}}</h3>
+					<span>{{salonDescription.address}}</span>
+					<span><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star">
+					</ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>{{salonDescription.average_rating}}</span>
+				</ion-label>
+				<ion-button class="custom-btn" (click)="goToService(salonDescription)">Book now</ion-button>
+			</ion-item>
+
+		</ion-list>
+	</div>
+	<ul class="cat-btn-row top-list">
+		<li>
+			<ion-button fill="clear" class="cat-icon" (click)="openWebsite()">
+			<!-- <ion-button href="#" fill="clear" class="cat-icon"> -->
+				<ion-img src="../../assets/img/website.png"></ion-img>
+			</ion-button>
+			<p class="cat-text">Website</p>
+		</li>
+		<li>
+			<ion-button  fill="clear" class="cat-icon" (click)="callSalon()">
+			<!-- <ion-button href="#" fill="clear" class="cat-icon"> -->
+				<ion-img src="../../assets/img/call.png"></ion-img>
+			</ion-button>
+			<p class="cat-text">Call</p>
+		</li>
+		<li>
+			<ion-button  fill="clear" class="cat-icon" (click)="salonDirection()">
+			<!-- <ion-button href="#" fill="clear" class="cat-icon"> -->
+				<ion-img src="../../assets/img/direction.png"></ion-img>
+			</ion-button>
+			<p class="cat-text">Direction</p>
+		</li>
+		<li>
+			<ion-button fill="clear" class="cat-icon" (click)="shareSalon()">
+			<!-- <ion-button  fill="clear" class="cat-icon"> -->
+				<ion-img src="../../assets/img/share.png"></ion-img>
+			</ion-button>
+			<p class="cat-text">Share</p>
+		</li>
+	</ul>
+	<div class="category">
+		<ion-list class="ion-no-padding">
+			<ion-item class="form-feild ion-no-padding" lines="none">
+				<h4>Book With Salon Specialist</h4>
+			</ion-item>
+		</ion-list>
+		<ul class="cat-btn-row specialist">
+			<li  *ngFor="let specialist of specialists" >
+				<ion-button  fill="clear" class="cat-icon">
+			     <ion-img src={{specialist.profile_file}}></ion-img>
+				</ion-button>
+				<p class="cat-text">{{specialist.full_name}}<span>Manager</span></p>
+			</li>
+		</ul>
+
+	</div>
+	<div padding class="salon-segment">
+	  <ion-segment scrollable [(ngModel)]="pet">
+	    <ion-segment-button value="about" (click) ="getFacilities()">
+	      About
+	    </ion-segment-button>
+	    <ion-segment-button value="services" (click) ="services()">
+	      Services
+	    </ion-segment-button>
+	    <ion-segment-button value="gallery"> 
+	      Gallery
+	    </ion-segment-button>
+	    <ion-segment-button value="review">
+	      Review
+	    </ion-segment-button>
+	  </ion-segment>
+	</div>
+
+	<div [ngSwitch]="pet" class="salon-segment-detail">
+	  <ion-list *ngSwitchCase="'about'" >
+	    <ion-item lines="none">
+	      <div>
+	      	<h3>Description</h3>
+	      	<p>{{saloondesc}}</p>
+	      </div>
+	    </ion-item>
+	    <ion-item lines="none">
+	      <div class="opening-hours">
+	      	<h3>Opening Hours</h3>
+	      	<ion-grid>
+				<ion-row>
+				    <ion-col size="6" class="ion-no-padding" *ngFor="let timeslots of timeslot">
+						{{timeslots.start_time}} - {{timeslots.end_time}}
+				    </ion-col>
+				</ion-row>
+			</ion-grid>
+	      </div>
+	    </ion-item>
+	    <ion-item lines="none">
+	      <div class="facilities">
+	      	<h3>Facilities</h3>
+	      	<ion-grid>
+				<ion-row >
+				    <ion-col size="3" class="ion-no-padding" *ngFor= "let facility of facilityItem">
+				      <p><span class="facilities-icon"><ion-img src={{facility.icon}}></ion-img></span>
+				      <span>{{facility.title}}</span>
+				      </p>
+					</ion-col>
+				</ion-row>
+			</ion-grid>
+	      </div>
+	    </ion-item>
+	  </ion-list>
+
+	  <ion-list *ngSwitchCase="'services'" >
+	    <ion-item class="services-col" *ngFor="let services of servicesList">
+	      <h3>{{services.title}}
+			  <!-- <span>12 type</span> -->
+			</h3>
+	      <ion-button fill="clear" class="view-more" slot="end" (click)="goToService(salonDescription)">View</ion-button>
+	    </ion-item>
+	  </ion-list>
+
+	  <ion-list *ngSwitchCase="'gallery'">
+	    <ion-item lines="none">
+	      <div class="gallery" *ngFor="let salonImage of salonImages">
+	      	<ion-grid>
+				<ion-row>
+				    <ion-col size="12">
+				      <ion-img src={{salonImage.image}}></ion-img>
+				    </ion-col>
+				</ion-row>
+			</ion-grid>
+
+	      </div>
+	    </ion-item>
+	  </ion-list>
+
+	  <ion-list class="review-box" *ngSwitchCase="'review'">
+	    <ion-item lines="none" class="write-review">
+	        <ion-grid>
+				<ion-row>
+				    <ion-col size="6">
+				      <h3>Write your review</h3>
+				    </ion-col>
+				    <!-- <ion-col size="6" class="stars">
+				      <ion-button href="#" fill="clear"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon></ion-button>
+				    </ion-col> -->
+				    <ion-col size="12" class="review-feild">
+				      	<ion-thumbnail>
+						  <ion-img src="{{userPic}}"></ion-img>
+						</ion-thumbnail>
+						<ion-item>
+							<ion-textarea type="text" placeholder="Write review" [(ngModel)]="review"></ion-textarea>
+						</ion-item>
+				      	<ion-button  fill="clear" class="post" (click)="postReview(review)">Post</ion-button>
+				    </ion-col>
+				</ion-row>
+			</ion-grid>
+	    </ion-item>
+	    <ion-item lines="none" class="all-review-head">
+	    	<h3>All Reviews</h3>
+		</ion-item>
+		
+	    <ion-item *ngFor= "let review of reviews">
+	    	<ion-grid>
+				<ion-row> 
+				    <ion-col size="12" class="review-col">
+				      <ion-thumbnail>
+						  <ion-img src="{{review.image}}"></ion-img>
+						</ion-thumbnail>
+					  <h4>{{review.created_by_name}}</h4>
+					  <p class="review-con">{{review.review}}</p>
+				      <!-- <ion-button fill="clear"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon></ion-button> -->
+					  <ion-button fill="clear" class="review-date">{{review.updated_on}}</ion-button>
+					 </ion-col>
+				</ion-row>
+			</ion-grid>
+	  	</ion-item>
+	  </ion-list>
+	</div>
+</ion-content>

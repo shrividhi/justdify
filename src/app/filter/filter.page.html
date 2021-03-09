@@ -1,0 +1,68 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" [routerLink]="['/search-result']">
+      Cancel
+    </ion-buttons>
+    <ion-title>filter</ion-title>
+    <ion-buttons slot="end" (click)= "applyFilter()">
+      Done
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content>
+	<div class="service">
+		<h3>Services</h3>
+		<ul class="services-btn-list">
+			<li *ngFor="let item of mainObject">
+				<ion-item lines="none" *ngFor="let key of keys(item)" >
+					<label class="container-checkbox">
+						<input type="checkbox" (change)="orderSelect($event, key)"> 
+						<span class="checkmark">{{item[key]}}</span>
+					</label>
+			    </ion-item>
+			</li>
+		</ul>
+		<!-- <ul class="services-btn-list">
+			<li *ngFor="let item of mainObject">
+				<ion-item lines="none" *ngFor="let key of keys(item)">
+				 <ion-checkbox (ionChange)="orderSelect($event, key)"></ion-checkbox>
+					<ion-label>{{item[key]}}</ion-label>
+			   </ion-item>
+			</li>
+		</ul> -->
+
+		<ion-list>
+			<h3>Rating</h3>
+            <ion-list class="services-btn-list">
+				<ion-item lines="none">
+                  <rating [(ngModel)]="rate" readonly="false" size="default"
+                      (ngModelChange)="onRateChange($event)"></rating>
+				</ion-item>
+			</ion-list>
+        </ion-list>
+
+		<ion-list >
+                <ion-radio-group allow-empty-selection="true" name="radio-group" (ionChange)="radioGroupChange($event)" #radioGroup>
+					<h3>Gender</h3>
+					<ion-item class="gender" lines="none" *ngFor="let item of radio_list" (ionSelect)="radioSelect($event)">
+					  <ion-radio name="{{item.name}}" value="{{item.value}}"></ion-radio>
+					  <span><ion-label>{{item.text}}</ion-label></span>
+					</ion-item>
+				  </ion-radio-group>
+		</ion-list>
+
+		<ion-list>
+			<h3>Distance</h3>
+			<ion-item lines="none">
+				<ion-range pin="true" min="0" max="200" [(ngModel)]="position"  color="secondary" (ngModelChange)="rangeChanged($event)">
+					<ion-label slot="start">0</ion-label>
+					<ion-label slot="end">200</ion-label>
+				  </ion-range>
+			  </ion-item>
+		</ion-list>
+
+		
+	</div>
+</ion-content>

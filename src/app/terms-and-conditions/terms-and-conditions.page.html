@@ -1,0 +1,20 @@
+<ion-header>
+	<ion-toolbar>
+	    <ion-buttons slot="start" (click)= "goBack()">
+	      <ion-icon name="arrow-back-outline"></ion-icon>
+	    </ion-buttons>
+	    <ion-title>Terms and Policy</ion-title>
+	    <ion-buttons slot="end" href="#">
+	      <!-- <ion-icon name="arrow-back-outline"></ion-icon> -->
+	    </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="term-cond">
+	 <!-- <h3>{{terms}}</h3>  -->
+		<p>{{this.terms}}</p>
+
+		<ion-button href="#" expand="block" fill="clear" class="btn-full" [routerLink]="['/privacy']">agree</ion-button>
+	</div>
+</ion-content>

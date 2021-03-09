@@ -1,0 +1,149 @@
+ion-header {
+	background-color: #1a608e;
+	background: linear-gradient(to bottom, #1a608e 1%, #1b8b86 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#1a608e", endColorstr="#1b8b86",GradientType=0 );
+	padding-top: 15px;
+    padding-bottom: 15px;
+}
+ion-title {
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+}
+ion-header ion-buttons {
+    min-width: 30px;
+}
+ion-toolbar {
+    --min-height: 45px;
+}
+.chat-page {
+    padding: 20px 20px 68px;
+    overflow: auto;
+    height: 100%;
+}
+h5 {
+    font-size: 14px;
+    color: #ACACAC;
+    font-weight: 500;
+    text-align: center;
+    margin: 0 0 10px;
+    line-height: 22px;
+    font-family: "Raleway", sans-serif;
+}
+.chat-text {
+    background: #21B5AE;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    margin: 0;
+    padding: 8px 15px;
+    line-height: 22px;
+    border-radius: 0 14px 14px 14px;
+}
+.chat-time {
+    font-size: 13px;
+    color: #ACACAC;
+    line-height: 22px;
+    font-family: "Raleway", sans-serif;
+}
+.rep-chat .chat-text {
+    background: #D6ECEB;
+    color: #333;
+    border-radius: 15px 0 14px 14px;
+}
+.rep-chat {
+    text-align: right;
+}
+.rep-chat {
+    text-align: right;
+    margin-left: 60px;
+}
+.rec-chat {
+    text-align: left;
+    margin-right: 60px;
+}
+.chat-page ion-item {
+    margin-bottom: 12px;
+}
+.chat-box {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.chat-box ion-item {
+    background: #21B5AE;
+    --background: #21B5AE;
+    margin-bottom: 0 !important;
+    padding: 10px 15px;
+}
+.chat-icon {
+    color: #fff;
+    font-size: 18px;
+}
+.cat-icon-image{
+    width: 62px;
+    height: 62px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50px;
+    overflow: hidden;
+}
+.chat-box ion-item ion-input {
+    background: #fff !important;
+    padding-left: 10px !important;
+    padding-right: 30px !important;
+    height: 40px !important;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-right: 10px;
+}
+.chat-btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 9;
+    transform: rotate(-45deg);
+    font-size: 16px;
+    color: #21B5AE;
+}
+ion-title ion-img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    width: 45px;
+    height: 45px;
+    border-radius: 45px;
+}
+/////////////////////////////
+page-chat {
+    .innerMessage{
+      display: inline-block;
+      padding: 5px 10px;
+      background-color: #007aff;
+      margin: 5px;
+      color: white;
+      border-radius: 3px;
+    }
+    .userName {
+      font-weight: bold;
+      font-size: 80%;
+    }
+    .message {
+      font-size: 120%;
+    }
+    .message:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .messageLeft {
+      float: left;
+    }
+  
+    .messageRight {
+      float: right;
+    }
+  }

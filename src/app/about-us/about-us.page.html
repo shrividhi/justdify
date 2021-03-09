@@ -1,0 +1,35 @@
+<ion-header class="profile-top">
+	<ion-toolbar>
+	    <ion-buttons slot="start" (click)= "goBack()">
+	      <ion-icon name="arrow-back-outline"></ion-icon>
+	    </ion-buttons>
+	    <ion-title>About Us</ion-title>
+	    <ion-buttons slot="end" href="#">
+	      <!-- <ion-icon name="arrow-back-outline"></ion-icon> -->
+	    </ion-buttons>
+    </ion-toolbar>
+    
+		<ion-list class="ion-no-padding">
+			<ion-item class="ion-no-padding" lines="none">
+				<ion-buttons href="#"><ion-img src="../../assets/img/logo.png"></ion-img></ion-buttons>
+			</ion-item>
+			<ion-item class="ion-no-padding" lines="none">
+				<ion-button href="#" fill="clear" class="con-btn"><ion-icon name="logo-whatsapp"></ion-icon> +1 205 485 4856</ion-button>
+			</ion-item>
+			<ion-item class="ion-no-padding" lines="none">
+				<ion-button href="#" fill="clear" class="con-btn"><ion-icon name="mail-outline"></ion-icon> dummyuser@mail.com</ion-button>
+			</ion-item>
+
+		</ion-list>
+</ion-header>
+<ion-content>
+	
+
+	<div class="about-us">
+		<p>{{this.about}}</p>
+		<h3>FOR MORE INFORMATION PLEASE CONTACT OUR TEAM</h3>
+		<ion-button href="#" fill="clear" class="con-btn"><ion-icon name="logo-whatsapp"></ion-icon> +1 205 485 4856</ion-button>
+		<ion-button href="#" fill="clear" class="con-btn"><ion-icon name="mail-outline"></ion-icon> dummyuser@mail.com</ion-button>
+		<ion-button href="#" fill="clear" class="get-btn" [routerLink]="['/contactUs']">Get In Touch</ion-button>
+	</div>
+</ion-content>

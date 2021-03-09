@@ -1,0 +1,184 @@
+ion-header {
+	// background-color: #1a608e;
+	// background: linear-gradient(to bottom, #1a608e 1%, #1b8b86 100%);
+	// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#1a608e", endColorstr="#1b8b86",GradientType=0 );
+	padding-top: 15px;
+    padding-bottom: 15px;
+    position: absolute;
+}
+ion-title {
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
+}
+ion-header ion-buttons {
+    min-width: 30px;
+}
+ion-toolbar {
+    --min-height: 45px;
+}
+.stepe-right {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 500;
+    font-family: "Raleway", sans-serif;
+}
+.review-order {
+    background-color: #1a608e;
+    background: linear-gradient(to bottom, #1a608e 1%, #1b8b86 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#1a608e", endColorstr="#1b8b86",GradientType=0 );
+    padding-top: 95px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.review-order ion-list {
+    background: transparent;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 0;
+    margin-top: 10px;
+}
+.review-order ion-item {
+    --background: transparent;
+    --padding-start: 0;
+    --padding-end: 0;
+    --padding-top: 0px;
+    --padding-bottom: 0px;
+    --border-color: rgba(255,255,255,0.3);
+}
+.review-order ion-label {
+    font-size: 18px;
+    color: #fff;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    line-height: 26px;
+}
+.review-order ion-label span {
+    display: block;
+    font-size: 12px;
+    color: #D8D8D8;
+    font-weight: 500;
+}
+.icon-right {
+    margin: 15px 0;
+    border-radius: 6px;
+    --border-radius: 6px;
+}
+.icon-right ion-img {
+    border-radius: 6px;
+    overflow: hidden;
+}
+.btn-right {
+    font-size: 14px;
+    color: #747474;
+    font-weight: 600;
+    font-family: "Raleway", sans-serif;
+}
+.total-btn {
+    font-size: 18px;
+    color: #002423;
+    font-weight: 600;
+    font-family: "Raleway", sans-serif;
+}
+.payment-method {
+    padding: 20px 20px 0;
+}
+
+.payment-method ion-label {
+    font-size: 18px;
+    color: #002423;
+    font-weight: 600;
+    font-family: "Raleway", sans-serif;
+    line-height: 26px;
+}
+.payment-method ion-label span {
+    display: block;
+    font-size: 12px;
+    color: #747474;
+    font-weight: 500;
+}
+.payment-method h3 {
+    font-weight: 600 !important;
+    font-size: 18px;
+    color: #002423;
+    margin: 0 0 10px;
+}
+
+.payment-method ion-list {
+    margin: 0;
+    padding-top: 0;
+}
+
+.store ion-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #002423;
+    margin-top: 0;
+}
+
+.review-order h3 {
+    font-size: 24px;
+    color: #fff;
+    font-weight: 700 !important;
+    margin: 0 0 10px;
+}
+.confirm-btn {
+    background: #FFFFFF;
+    font-size: 12px;
+    color: #21B5AE;
+    font-weight: 700;
+    text-transform: capitalize;
+    border-radius: 20px;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    --border-radius: 4px;
+    --padding-top: 0;
+    --padding-bottom: 0;
+    --padding-start: 15px;
+    --padding-end: 18px;
+    font-family: "Raleway", sans-serif;
+}
+
+.cuttom-btn {
+    background: #21B5AE;
+    font-size: 13px;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 13px 0;
+    border-radius: 25px;
+    box-shadow: 0 1px 8px #21B5AE;
+    margin: 10px 6px;
+    font-family: "Raleway", sans-serif;
+}
+.success-btn {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+    text-align: center;
+    margin-inline-start: 20px;
+    margin-inline-end: 20px;
+}
+.success-btn span {
+    display: block;
+    background: #fff;
+    width: 44px;
+    height: 44px;
+    margin: 0 auto 5px;
+    border-radius: 44px;
+    padding: 11px;
+}
+.review-order .btn-group {
+    text-align: center;
+    width: 100%;
+    padding-top: 18px;
+    padding-bottom: 5px;
+}

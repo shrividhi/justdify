@@ -1,0 +1,62 @@
+<ion-content>
+	<div class="full-bg">
+		<div class="login-box">
+			<div class="login-logo"><ion-button fill="clear"><ion-img src="../../assets/img/logo.png"></ion-img></ion-button></div>
+			<div class="login-bg">
+
+				<form [formGroup]="loginForm">
+                    <h3>Hello</h3>
+				<p class="sub-head">Please login to your account.</p>
+				<ion-list>
+				  <ion-radio-group>
+				    <ion-item lines="none" size="6" >
+				      <ion-radio formControlName= 'email' value="cord"></ion-radio>
+				      <ion-label>as a Partner</ion-label>
+				      <ion-radio formControlName= 'email'  value="duesenberg"></ion-radio>
+				      <ion-label>as a Customer</ion-label>
+				    </ion-item>
+					</ion-radio-group>
+					
+				    <ion-item class="form-feild">
+					  <ion-label position="floating">Email </ion-label>
+					  <ion-input formControlName= 'email' placeholder= 'Enter mobile no./email'></ion-input>
+					  <ion-button fill="clear" class="over-icon"><ion-img src="../../assets/img/mail-icon.png"></ion-img></ion-button>
+					  <p class="validation-error" *ngIf="loginForm.controls.email.errors  && loginForm.controls.email.dirty">Please enter valid email</p>
+					</ion-item>
+
+					<ion-item class="form-feild">
+					  <ion-label position="floating">Password</ion-label>
+					  <ion-input  formControlName='password' type="{{type}}" placeholder= 'Enter password'></ion-input>
+					  <ion-button *ngIf="!showPass" fill="clear" class="over-icon" (click)="showPassword()">
+						<ion-img src="../../assets/img/eye-view.png" ></ion-img>
+					  </ion-button>
+					  <ion-button *ngIf="showPass" fill="clear" class="over-icon-password" (click)="showPassword()">
+						<ion-img src="../../assets/img/eye-view.png" ></ion-img>
+					  </ion-button>
+					  <p class="validation-error" *ngIf="loginForm.controls.password.errors  && loginForm.controls.password.dirty"> Please enter valid password</p>
+					</ion-item>
+
+					<ion-item class="form-feild" lines="none">
+					  <ion-button fill="clear" slot="end" class="forgot-btn" [routerLink]="['/forgot-password']">Forgot Password?</ion-button>
+					</ion-item>
+				    <ion-item class="form-feild" lines="none">
+					  <ion-button class="custom-button" (click)= "doLogin()"  [disabled]="!loginForm.valid">LOGIN</ion-button>
+					</ion-item>
+					<ion-item class="form-feild" lines="none">
+						<p>Or Login using social media</p>
+					</ion-item>
+					<ion-item class="form-feild" lines="none">
+						<ul class="social-link">
+							<li><ion-button fill="clear" (click)="regWithFb()"><ion-img src="../../assets/img/fb-icon.png"></ion-img></ion-button></li>
+							<!-- <li><ion-button fill="clear" (click)="regWithTwitter()"><ion-img src="../../assets/img/twitter-icon.png"></ion-img></ion-button></li> -->
+							<li><ion-button fill="clear" (click)="doGoogleLogin()"><ion-img src="../../assets/img/mail-b-icon.png"></ion-img></ion-button></li>
+						</ul>
+					</ion-item>
+				</ion-list>
+			 </form>
+			</div>
+			<p>Don’t have an account? <ion-button fill="clear" [routerLink]="['/sign-up']">Register now</ion-button></p>
+			<p><ion-button  fill="clear" (click)="skipLogin()">Skip For Now ></ion-button></p>
+		</div>
+	</div>
+</ion-content>

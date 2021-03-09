@@ -1,0 +1,177 @@
+ion-header {
+	// background-color: #1a608e;
+	// background: linear-gradient(to bottom, #1a608e 1%, #1b8b86 100%);
+	// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#1a608e", endColorstr="#1b8b86",GradientType=0 );
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: absolute;
+    background: #2a6f8b;
+}
+ion-title {
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
+}
+ion-header ion-buttons {
+    min-width: 30px;
+}
+ion-toolbar {
+    --min-height: 45px;
+}
+.stepe-right {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 500;
+    font-family: "Raleway", sans-serif;
+}
+.review-order {
+    background-color: #1a608e;
+    background: linear-gradient(to bottom, #1a608e 1%, #1b8b86 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#1a608e", endColorstr="#1b8b86",GradientType=0 );
+    padding-top: 85px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.review-order ion-item {
+    --background: transparent;
+    --padding-start: 0;
+    --padding-end: 0;
+    --padding-top: 0px;
+    --padding-bottom: 0px;
+    --border-color: rgba(255,255,255,0.3);
+}
+.review-order ion-label {
+    font-size: 18px;
+    color: #fff;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    line-height: 22px;
+}
+.review-order ion-label span {
+    display: block;
+    font-size: 12px;
+    color: #D8D8D8;
+    font-weight: 500;
+}
+.icon-right {
+    margin: 10px 0;
+    border-radius: 6px;
+    --border-radius: 6px;
+}
+.icon-right ion-img {
+    border-radius: 6px;
+    overflow: hidden;
+}
+.btn-right {
+    font-size: 14px;
+    color: #D8D8D8;
+    font-weight: 600;
+    font-family: "Raleway", sans-serif;
+}
+.total-btn {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+    font-family: "Raleway", sans-serif;
+}
+.payment-method {
+    padding: 20px 20px 0;
+}
+.payment-method ion-thumbnail {
+    width: 45px;
+    height: 26px;
+    margin-inline-end: 10px;
+}
+.payment-method ion-label {
+    font-size: 14px;
+    color: #747474;
+    font-weight: 500;
+    font-family: "Raleway", sans-serif;
+}
+.payment-method h3 {
+    font-weight: 600 !important;
+    font-size: 18px;
+    color: #002423;
+    margin: 0 0 10px;
+}
+.card-box {
+    box-shadow: 0 0 6px rgba(0,0,0,0.2);
+    margin: 5px 8px 15px;
+    --padding-start: 15px;
+    --padding-end: 15px;
+    --padding-top: 5px;
+    --padding-bottom: 5px;
+    border-radius: 6px;
+    --min-height: auto;
+}
+.payment-method ion-list {
+    margin: 0 -7px;
+    padding-top: 0;
+}
+.store ion-radio {
+    margin-inline-end: 13px;
+    margin-inline-start: 8px;
+    border: 1px solid #21B5AE;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    --color-checked: #21B5AE;
+    margin-top: 0;
+}
+.store ion-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #002423;
+    margin-top: 0;
+}
+.card-box ion-radio {
+    border: 1px solid #21B5AE;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    margin-inline-end: 0px;
+    --color-checked: #21B5AE;
+}
+.card-box ion-radio.md {
+    --border-width: 1px;
+    border: none;
+    --color: #21B5AE;
+}
+.store ion-radio.md {
+    --border-width: 1px;
+    border: none;
+    --color: #21B5AE;
+}
+ion-footer {
+    background: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 0 0 #ccc;
+    z-index: 9999;
+    border-top: 1px solid #ddd;
+}
+.custom-brn {
+    background: #21B5AE;
+    color: #fff;
+    font-size: 13px;
+    text-transform: uppercase;
+    padding: 9px 15px; 
+    border-radius: 20px;
+}
+ion-footer label {
+    font-size: 18px;
+    color: #002423;
+    font-weight: 600;
+    font-family: "Raleway", sans-serif;
+}
+ion-footer label span {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+    line-height: 20px;
+}
